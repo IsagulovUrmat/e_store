@@ -37,6 +37,23 @@ class AboutUs(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField()
 
+class Contacts(models.Model):
+    type_of = (
+        ('Email', 'Email'),
+        ('Phone number', 'Phone number'),
+    )
+    name = models.CharField(max_length=20)
+    second_name = models.CharField(max_length=20)
+    phonenumber = models.CharField(max_length=20)
+    email = models.CharField(max_length=20)
+    phy_adress = models.CharField(max_length=20)
+    type = models.CharField(max_length=20, choices=type_of, default=phonenumber)
+    latitude = models.IntegerField(blank=True, null=True)
+    longtitude = models.IntegerField(blank=True, null=True)
+
+
+
+
 
 
 

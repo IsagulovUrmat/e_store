@@ -12,8 +12,14 @@ class OrderAdmin(admin.ModelAdmin):
 class AboutUsAdmin(admin.ModelAdmin):
     list_display = ["title", "description"]
 
+class ContactsAdmin(admin.ModelAdmin):
+    list_display = ["name", "second_name", "phonenumber", "email", "phy_adress",
+                    "type", "latitude", "longtitude"
+                    ]
+
 admin.site.register(Products,ProductsAdmin)
 admin.site.register(Order,OrderAdmin)
 admin.site.register(AboutUs,AboutUsAdmin)
+admin.site.register(Contacts,ContactsAdmin)
 
 

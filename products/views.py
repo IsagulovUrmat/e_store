@@ -36,6 +36,9 @@ def about_us(request):
     aboutus = AboutUs.objects.all()
     return render(request, 'products/aboutus.html', {"aboutus": aboutus})
 
+def contacts_page(request):
+    contact = Contacts.objects.all()
+    return render(request, 'products/contacts.html', {"contact": contact})
 
 
 
