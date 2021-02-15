@@ -1,18 +1,11 @@
-<table bordercolor="black" border="1" bgcolor="#ffcc00" width="100%">
-    <tr>
-        <td>Username</td>
-        <td>E-mail</td>
-        <td>First name</td>
-    </tr>
+{% extends 'products/base.html' %}
+{% block content %}
 
+{{ user.username }}
 
-    {% for product in user %}
-    <tr>
+{% for order in orders %}
+    {{ order.products }}
+    {{ order.quantity }}
+{% endfor %}
 
-        <td>{{ product.username }}</td>
-        <td>{{ product.email }}</td>
-        <td>{{ product.first_name }}</td>
-    </tr>
-    {% endfor %}
-
-</table>
+{% endblock %}

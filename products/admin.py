@@ -21,5 +21,6 @@ admin.site.register(Products,ProductsAdmin)
 admin.site.register(Order,OrderAdmin)
 admin.site.register(AboutUs,AboutUsAdmin)
 admin.site.register(Contacts,ContactsAdmin)
+admin.site.register(Profile)
 
 

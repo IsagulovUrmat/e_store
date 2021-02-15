@@ -18,17 +18,22 @@
 				{% csrf_token %}
 				<h2>Register Account Form</h2>
 				<div class="form-row">
+					<label>Email</label>
+					{{ form.email }}
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="form-row">
 					<label>Full Name</label>
 					{{ form.username }}
 					<i class="fas fa-user"></i>
 				</div>
 				<div class="form-row">
-					<label>Your Email</label>
+					<label>Password</label>
 					{{ form.password1 }}
 					<i class="fas fa-envelope"></i>
 				</div>
 				<div class="form-row">
-					<label>Password</label>
+					<label>Check Password</label>
 					{{ form.password2 }}
 					<i class="fas fa-lock"></i>
 				</div>

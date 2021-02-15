@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'products' %}">E-Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'products' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About Us
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'contacts' %}">Contacts</a>
+          <a class="dropdown-item" href="{% url 'aboutus' %}">Information</a>
+          <a class="dropdown-item" href="#">Map</a>
+        </div>
+      </li>
+    </ul>
+        <form class="form-inline" action="" method="GET">
+          {{ filter.form }}
+          <input class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        </form>
+     {% if request.user.is_authenticated %}
+    <div class="nav-item nav-link">Hello, <a href="{% url 'profile' %}">{{ request.user }}</a></div>
+    <a class="text-right buttons" href="{% url 'logout' %}"><button class="btn btn-outline-dark">Logout</button></a>
+
+      {% else %}
+        <a class="nav-link" href="{% url 'signup' %}">Sign Up<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'login_page' %}">Log in<span class="sr-only">(current)</span></a>
+     {% endif %}
+  </div>
+</nav>
